@@ -16,7 +16,9 @@
                 <!-- right side of navbar-->
                 <div class="flex items-center md:gap-4">
                     <i class="fa-solid fa-bars md:!hidden"></i>
-                    <img class="w-10 md:w-14" src="./assets/imgs/logo.jpg" alt="" width="60px">
+                    <a onclick="handleAClick(event)" href="/src/index.html">
+                        <img href="/src/index.html" class="w-10 md:w-14" src="./assets/imgs/logo.jpg" alt="" width="60px">
+                    </a>
                     <div class="hidden md:flex gap-6">
                         <span>محصولات
                             <i class="fa-solid fa-chevron-down text-sm"></i>
@@ -72,7 +74,7 @@
                 <div class="w-1/2 h-5 mt-4 bg-slate-300 animate-pulse"></div>
             </div>
          </div>
-         <a class="bg-black text-white px-8 py-2 block mx-auto w-max mt-6" href="#">همه محصولات</a>
+         <a href="/products" onclick="handleAClick(event)" class="bg-black text-white px-8 py-2 block mx-auto w-max mt-6">همه محصولات</a>
     </main>
 
     <footer class="mt-16"></footer>
