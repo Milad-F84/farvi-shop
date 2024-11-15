@@ -14,7 +14,7 @@ async function getAllProducts() {
   return result;
 }
 
-async function getSinglrProduct(id) {
+async function getSingleProduct(id) {
   const result = await fetch(`https://fakestoreapi.com/products/${id}`)
     .then((res) => res.json())
     .then((json) => console.log(json));
@@ -27,7 +27,7 @@ async function renderMainPageProducts() {
     .map((product) => {
       const { id, title, image, price } = product;
       return `
-    <a onclick="handleAClick(event)" href="/products/${id}" class="w-full flex flex-col items-center rounded-lg shadow-xl pb-4 overflow-hidden">
+    <a href="/products/${id}" onclick="handleAClick(event,this)" class="w-full flex flex-col items-center rounded-lg shadow-xl pb-4 overflow-hidden">
     <img class="w-full aspect-square object-cover" src="${image}" alt="" width="400px">
     <h2 class="font-bold text-xl mt-4 text-center line-clamp-1">${title}</h2>
     <div class="flex gap-1 mt-4">
@@ -142,7 +142,7 @@ function renderMainPage() {
 }
 
 async function renderSingleProduct(id) {
-  const data = await getSinglrProduct(id);
+  const data = await getSingleProduct(id);
   const template = `
     <div class="container-primary flex flex-col md:flex-row gap-4">
     <img src="${data.image}"/>
